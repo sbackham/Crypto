@@ -43,7 +43,6 @@ def get_prime_input(prompt):
         except ValueError:
             print("Invalid input. Please enter an integer.")
 
-# Add a function for menu selection
 def menu():
     print("Select an option:")
     print("k: Key Generation")
@@ -66,7 +65,7 @@ if choice == 'k':
 elif choice == 's':
     # sign a message
     m = int(input("Enter your message (as a number): ")) 
-    _, public_a, public_Ya = public_key  # This should be defined or retrieved from previous step
+    _, public_a, public_Ya = public_key 
     signature = sign_message(m, p, public_a, private_key)
     print(f"Signature: {signature}")
 
@@ -75,7 +74,7 @@ elif choice == 'v':
     m = int(input("Enter the message associated with the signature (as a number): ")) 
     S1 = int(input("Enter S1 of the signature: "))
     S2 = int(input("Enter S2 of the signature: "))
-    _, public_a, public_Ya = public_key  # This should be defined or retrieved from previous step
+    _, public_a, public_Ya = public_key  
     validity = verify_signature(m, S1, S2, p, public_a, public_Ya)
     print(f"Signature validity: {validity}")
 
